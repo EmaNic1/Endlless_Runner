@@ -4,11 +4,22 @@ using UnityEngine;
 
 public class PlayerCollision_script : MonoBehaviour
 {
+
+    private void Start()
+    {
+        GameManager.instance.onPlay.AddListener(ActivatePlayer);
+    }
+
+    private void ActivatePlayer()
+    {
+        gameObject.SetActive(true);
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.transform.tag == "Obstacle")
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
             GameManager.instance.GameOver();
         }
     }
