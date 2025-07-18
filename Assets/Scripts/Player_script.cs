@@ -32,7 +32,7 @@ public class Player_script : MonoBehaviour
         speed += acceleration * Time.deltaTime;
 
         //Player moving forward without any key pressed
-        transform.Translate(Vector2.right * speed * Time.deltaTime);
+        //transform.Translate(Vector2.right * speed * Time.deltaTime);
 
         //Press space for jump
         if (Input.GetButtonDown("Jump") && coll.IsTouchingLayers(Ground))
